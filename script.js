@@ -3,7 +3,7 @@ let cells = grid.querySelectorAll('div');
 let color = 'black';
 
 
-
+// Create the default grid//
 function createGrid(input) {
     grid.style.gridTemplateColumns = `repeat(${input}, 1fr)`;
     grid.style.gridTemplateRows = `repeat(${input}, 1fr)`;
@@ -22,6 +22,7 @@ function createGrid(input) {
 
 createGrid(16);
 
+//Function that creates new grid//
 function userGrid() {
     input = parseInt(prompt("Enter the number of squares per each side for the new grid."));
 
@@ -39,50 +40,26 @@ function userGrid() {
 
 
 
-
+//Function to reset the grid//
 function reset() {
     let cells = grid.querySelectorAll('div');
     cells.forEach((div) => div.style.backgroundColor = 'white');
   }
 
-
+//Links function for new grid to New Grid Button// 
 const gridBtn = document.querySelector('#gridBtn');
 gridBtn.addEventListener('click', function() {
     reset();
     userGrid();
 })
 
+//Links reset function to reset button//
 const resetBtn = document.querySelector('#resetBtn');
 resetBtn.addEventListener('click', function() {
     reset();
 })
 
-function defaultColor() {
-
-    this.style.backgroundColor = (color);
-
-    /*
-    
-    const rgb = document.querySelector('#rgb');
-    rgb.addEventListener('click', function() {
-            this.style.backgroundColor = ("background","rgb("+Math.floor(Math.random()*256)+","+Math.floor(Math.random()*256)+","+Math.floor(Math.random()*256)+")")
-        })
-    
-    const black = document.querySelector('#black');
-    black.addEventListener('click', function () {
-        this.style.backgroundColor = ('black');
-    })
-  
-    */
-
-}   
-
-
-/*
-cell.addEventListener('mouseenter', function(event) {
-            event.target.style.backgroundColor = ("background","rgb("+Math.floor(Math.random()*256)+","+Math.floor(Math.random()*256)+","+Math.floor(Math.random()*256)+")")
-*/
-
+//Function for default color//
 function sketchColor() {
     if (color === 'rgb') {
         this.style.backgroundColor = ("background","rgb("+Math.floor(Math.random()*256)+","+Math.floor(Math.random()*256)+","+Math.floor(Math.random()*256)+")")
@@ -91,7 +68,7 @@ function sketchColor() {
         this.style.backgroundColor = color;
     }
 }
-
+//function to change color based on button click//
 function changeColor(choice) {
     color = choice;
 }
