@@ -3,6 +3,7 @@ body {
     flex-direction: column;
     height: 100vh;
     place-items: center;
+    background-color: rgb(141, 187, 228);
 }
 
 #grid {
