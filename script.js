@@ -24,6 +24,15 @@ createGrid(16);
 
 //Function that creates new grid//
 function userGrid() {
+    const removeChilds = (grid) => {
+        while (grid.lastChild) {
+            grid.removeChild(grid.lastChild)
+        }
+    }
+
+    removeChilds(grid)
+
+
     input = parseInt(prompt("Enter the number of squares per each side for the new grid."));
 
     if (input >= 2 || input < 100) {
